@@ -16,16 +16,16 @@
 #define GLOW_COLOR_OVERRIDE_THRESHOLD 0.1
 // Override color for current cursor
 // [0, 1]^3
-#define GLOW_COLOR_OVERRIDE_CURRENT 0.2, 0.4, 1.0
+#define GLOW_COLOR_OVERRIDE_CURRENT 0.2, 0.2, 0.2
 // Override color for previous cursor
 // [0, 1]^3
-#define GLOW_COLOR_OVERRIDE_PREVIOUS 0.4, 0.1, 1.0
+#define GLOW_COLOR_OVERRIDE_PREVIOUS 0.25, 0.25, 0.25
 // Brightness offset for glow effect
 // [0, 1]
-#define GLOW_COLOR_OFFSET_BRIGHTNESS 0.5
+#define GLOW_COLOR_OFFSET_BRIGHTNESS 0.0 
 // Time slowdown factor for animations
 // x \in R : x > 0
-#define TIME_DURATION_FACTOR 1.0
+#define TIME_DURATION_FACTOR 1.5
 
 
 
@@ -144,10 +144,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec4 currColor = colorOverride(iCurrentCursorColor, vec4(GLOW_COLOR_OVERRIDE_CURRENT, 1.0));
     vec4 prevColor = colorOverride(iPreviousCursorColor, vec4(GLOW_COLOR_OVERRIDE_PREVIOUS, 1.0));
     vec4 glowColor = mix(fragColor, mix(prevColor, currColor, dTip) + GLOW_COLOR_OFFSET_BRIGHTNESS, pow(dTip, 3));
-    glowColor = mix(glowColor, fragColor, pow(smoothstep(0.0, 0.3, dTrail), 0.1));
+    glowColor = mix(glowColor, fragColor, pow(smoothstep(0.0, 0.3, dTrail), 0.005));
 
-    vec4 trailColor = mix(vec4(1.0), glowColor, pow(smoothstep(0.0, 0.01, dTrail), 0.2));
-    vec4 trail = mix(trailColor, fragColor, pow(smoothstep(0.0, nearbyPrev ? 0.01 : 0.1, dTrail), 0.2));
+    vec4 trailColor = mix(vec4(1.0), glowColor, pow(smoothstep(0.0, 0.01, dTrail), 0.9));
+    vec4 trail = mix(trailColor, fragColor, pow(smoothstep(0.0, nearbyPrev ? 0.01 : 0.1, dTrail), 0.5));
     if (!nearbyPrev) {
         trail = mix(trailColor, trail, pow(smoothstep(0.0, 6.0, dTip), 0.05));
         trail = mix(trailColor, trail, pow(smoothstep(0.0, 8.0, dTip), 0.005));

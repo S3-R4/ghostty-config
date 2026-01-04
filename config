@@ -26,7 +26,7 @@ window-theme = ghostty
 # Catppuccin Macchiato, Catppuccin Frappe, Chester, Espresso, Firewatch
 theme = Chalk
 
-gtk-titlebar = true
+#gtk-titlebar = true # this setting was interfering with fullscreen behaviour
 gtk-titlebar-hide-when-maximized = true
 gtk-toolbar-style = raised
 gtk-titlebar-style = tabs
@@ -66,7 +66,7 @@ cursor-opacity = 0.7
 ###########
 # SHADERS #
 ###########
-custom-shader = ghostty-shaders/cursor_blaze.glsl
+#custom-shader = ghostty-shaders/cursor_blaze.glsl
 custom-shader = ghostty-shaders/in-game-crt-cursor.glsl
 # custom-shader = ghostty-shaders/tft.glsl
 custom-shader-animation = true
