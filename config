@@ -66,9 +66,9 @@ cursor-opacity = 0.7
 ###########
 # SHADERS #
 ###########
-#custom-shader = ghostty-shaders/cursor_blaze.glsl
+custom-shader = ghostty-shaders/cursor_blaze.glsl
 custom-shader = ghostty-shaders/in-game-crt-cursor.glsl
-# custom-shader = ghostty-shaders/tft.glsl
+#custom-shader = ghostty-shaders/tft.glsl
 custom-shader-animation = true
 
 
