@@ -1,0 +1,80 @@
+# IMPORTS
+
+#################
+# FONT SETTINGS #
+#################
+font-family = "JetBrains Mono"
+font-size = 12
+font-style-italic = true
+
+
+
+###################
+# WINDOW SETTINGS #
+###################
+window-padding-x = 0
+window-padding-y = 0
+window-inherit-working-directory = true
+# maybe turn this off?
+window-vsync = true
+
+window-decoration = auto
+window-theme = ghostty
+
+#THEME
+# These are good options
+# Catppuccin Macchiato, Catppuccin Frappe, Chester, Espresso, Firewatch
+theme = Chalk
+
+gtk-titlebar = true
+gtk-titlebar-hide-when-maximized = true
+gtk-toolbar-style = raised
+gtk-titlebar-style = tabs
+
+# gtk-custom-css = # TODO
+
+
+
+#######################
+# BACKGROUND SETTINGS #
+#######################
+#background = 2D3C59 # this is a brighter version of current color.
+background = 1A2130
+background-opacity = 0.95
+background-blur = true
+
+#foreground is the font folor?
+foreground = BABABA
+
+background-image = ?ghostty-backgrounds/animegirl-1.jpg
+background-image-opacity = 0.009
+background-image-fit = cover
+ 
+selection-background = 878787
+selection-clear-on-copy = true
+
+
+
+###################
+# CURSOR SETTINGS #
+###################
+cursor-opacity = 0.7
+#cursor-style = block_hollow
+
+
+
+###########
+# SHADERS #
+###########
+custom-shader = ghostty-shaders/cursor_blaze.glsl
+custom-shader = ghostty-shaders/in-game-crt-cursor.glsl
+# custom-shader = ghostty-shaders/tft.glsl
+custom-shader-animation = true
+
+
+
+#######################
+# RESOURCE MANAGEMENT #
+#######################
+linux-cgroup = always
+linux-cgroup-memory-limit = 4194304000
