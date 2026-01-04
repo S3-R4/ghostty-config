@@ -71,12 +71,12 @@ vec2 getRectangleCenter(vec4 rectangle) {
     return vec2(rectangle.x + (rectangle.z / 2.), rectangle.y - (rectangle.w / 2.));
 }
 
-const vec4 TRAIL_COLOR = vec4(1.0, 0.725, 0.161, 1.0); // yellow
+const vec4 TRAIL_COLOR = vec4(0.314, 0.314, 0.329, 1.0); // gray
 const vec4 CURRENT_CURSOR_COLOR = TRAIL_COLOR;
 const vec4 PREVIOUS_CURSOR_COLOR = TRAIL_COLOR;
-const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0., 0., 1.0); // red-orange
-const float DURATION = .5;
-const float OPACITY = .2;
+const vec4 TRAIL_COLOR_ACCENT = vec4(0.392, 0.392, 0.408, 1.0); // brighter gray
+const float DURATION = .4;
+const float OPACITY = .05;
 // Don't draw trail within that distance * cursor size.
 // This prevents trails from appearing when typing.
 const float DRAW_THRESHOLD = 1.5;
