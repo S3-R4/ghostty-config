@@ -40,14 +40,14 @@ gtk-titlebar-style = tabs
 #######################
 #background = 2D3C59 # this is a brighter version of current color.
 background = 1A2130
-background-opacity = 0.95
+background-opacity = 0.98
 background-blur = true
 
 #foreground is the font folor?
 foreground = BABABA
 
 background-image = ?ghostty-backgrounds/animegirl-1.jpg
-background-image-opacity = 0.009
+background-image-opacity = 0.01
 background-image-fit = cover
  
 selection-background = 878787
