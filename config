@@ -1,80 +1,147 @@
-# IMPORTS
+# Ghostty Terminal Configuration
+#
+# This configuration file has been optimized for readability and performance.
+# For a full list of available options, please refer to the official Ghostty documentation:
+# https://ghostty.org/docs/config/reference
 
-#################
-# FONT SETTINGS #
-#################
+################################################################################
+# APPEARANCE
+################################################################################
+
+# Theme
+#
+# Sets the color scheme for the terminal.
+# A list of available themes can be found by running `ghostty +list-themes`.
+# Some popular options include: Catppuccin Macchiato, Catppuccin Frappe, Chester, Espresso, Firewatch
+theme = Chalk
+
+# Font
+#
+# The `font-family` can be set to any font installed on your system.
+# Use `ghostty +list-fonts` to see a list of available fonts.
 font-family = "JetBrains Mono"
 font-size = 12
 font-style-italic = true
 
-
-
-###################
-# WINDOW SETTINGS #
-###################
-window-padding-x = 0
-window-padding-y = 0
-window-inherit-working-directory = true
-# maybe turn this off?
-window-vsync = true
-
-window-decoration = auto
-window-theme = ghostty
-
-#THEME
-# These are good options
-# Catppuccin Macchiato, Catppuccin Frappe, Chester, Espresso, Firewatch
-theme = Chalk
-
-#gtk-titlebar = true # this setting was interfering with fullscreen behaviour
-gtk-titlebar-hide-when-maximized = true
-gtk-toolbar-style = raised
-gtk-titlebar-style = tabs
-
-# gtk-custom-css = # TODO
-
-
-
-#######################
-# BACKGROUND SETTINGS #
-#######################
-#background = 2D3C59 # this is a brighter version of current color.
+# Background
+#
+# The `background` color is specified in hex format.
+# `background-opacity` ranges from 0.0 (fully transparent) to 1.0 (fully opaque).
+# `background-blur` adds a blur effect to the background when opacity is less than 1.0.
 background = 1A2130
 background-opacity = 0.98
 background-blur = true
 
-#foreground is the font folor?
+# Foreground
+#
+# The `foreground` color is the color of the text.
 foreground = BABABA
 
+# Background Image
+#
+# You can set a background image for the terminal.
+# The `background-image-opacity` controls the transparency of the image.
+# The `background-image-fit` option controls how the image is scaled.
 background-image = ?ghostty-backgrounds/animegirl-1.jpg
 background-image-opacity = 0.01
 background-image-fit = cover
- 
+
+# Selection
+#
+# `selection-background` is the color of the text selection.
+# `selection-clear-on-copy` will clear the selection after copying text.
 selection-background = 878787
 selection-clear-on-copy = true
 
 
+################################################################################
+# CURSOR
+################################################################################
 
-###################
-# CURSOR SETTINGS #
-###################
+# Cursor
+#
+# `cursor-opacity` controls the transparency of the cursor.
+# `cursor-style` can be set to `block`, `bar`, `underline`, or `block_hollow`.
 cursor-opacity = 0.7
-#cursor-style = block_hollow
+# cursor-style = block_hollow
 
 
+################################################################################
+# WINDOW
+################################################################################
 
-###########
-# SHADERS #
-###########
+# Window Padding
+#
+# `window-padding-x` and `window-padding-y` add padding to the window edges.
+window-padding-x = 0
+window-padding-y = 0
+
+# Window Behavior
+#
+# `window-inherit-working-directory` will open new windows and tabs in the
+# same directory as the currently focused terminal.
+window-inherit-working-directory = true
+
+# Window Decorations
+#
+# `window-decoration` controls the window's title bar and borders.
+# `window-theme` sets the theme for the window decorations.
+window-decoration = auto
+window-theme = ghostty
+
+# GTK Specific Settings
+#
+# These settings are specific to the GTK version of Ghostty on Linux.
+# `gtk-titlebar-hide-when-maximized` will hide the title bar when the window is maximized.
+# `gtk-toolbar-style` controls the appearance of the toolbar.
+# `gtk-titlebar-style` controls the appearance of the title bar.
+#gtk-titlebar = true # this setting was interfering with fullscreen behaviour
+gtk-titlebar-hide-when-maximized = true
+gtk-toolbar-style = raised
+gtk-titlebar-style = tabs
+# gtk-custom-css = # TODO
+
+
+################################################################################
+# PERFORMANCE
+################################################################################
+
+# VSync
+#
+# `window-vsync` synchronizes rendering with the screen's refresh rate.
+# Enabling VSync can reduce screen tearing, but may increase input latency.
+# Disabling it may improve responsiveness, but can cause visual artifacts.
+# This setting is currently only supported on macOS.
+window-vsync = true
+
+
+################################################################################
+# SHADERS
+################################################################################
+
+# Custom Shaders
+#
+# You can apply custom GLSL shaders to the terminal.
+# `custom-shader-animation` enables animations for the shaders.
 custom-shader = ghostty-shaders/cursor_blaze.glsl
 custom-shader = ghostty-shaders/in-game-crt-cursor.glsl
 #custom-shader = ghostty-shaders/tft.glsl
 custom-shader-animation = true
 
 
+################################################################################
+# RESOURCE MANAGEMENT (Linux Only)
+################################################################################
 
-#######################
-# RESOURCE MANAGEMENT #
-#######################
+# Cgroups
+#
+# `linux-cgroup` isolates each terminal instance into its own cgroup.
+# This allows for better resource management and prevents a single runaway
+# process from affecting the entire application.
 linux-cgroup = always
+
+# Memory Limit
+#
+# `linux-cgroup-memory-limit` sets a soft memory limit for each cgroup.
+# The value is in bytes. 4194304000 bytes = 4 GB.
 linux-cgroup-memory-limit = 4194304000
