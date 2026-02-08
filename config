@@ -21,7 +21,9 @@ window-vsync = true
 window-decoration = auto
 window-theme = ghostty
 
-#THEME
+#########
+# THEME #
+#########
 # These are good options
 # Catppuccin Macchiato, Catppuccin Frappe, Chester, Espresso, Firewatch
 theme = Chalk
@@ -40,7 +42,7 @@ gtk-titlebar-style = tabs
 #######################
 #background = 2D3C59 # this is a brighter version of current color.
 background = 1A2130
-background-opacity = 0.98
+background-opacity = 0.991
 background-blur = true
 
 #foreground is the font folor?
@@ -50,7 +52,7 @@ background-image = ?ghostty-backgrounds/animegirl-1.jpg
 background-image-opacity = 0.01
 background-image-fit = cover
  
-selection-background = 878787
+selection-background = 878785
 selection-clear-on-copy = true
 
 
@@ -78,3 +80,9 @@ custom-shader-animation = true
 #######################
 linux-cgroup = always
 linux-cgroup-memory-limit = 4194304000
+
+
+#####################
+# TERMINAL SETTINGS #
+#####################
+shell-integration = zsh
